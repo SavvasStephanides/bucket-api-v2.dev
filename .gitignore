@@ -1,0 +1,3 @@
+apps/
+.env
+docker-compose.appwrite.yml

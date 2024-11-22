@@ -1,0 +1,16 @@
+include:
+  - docker-compose.appwrite.yml
+  
+services:
+  bucket-api:
+    image: node:23-alpine3.19
+    networks:
+      - appwrite
+    volumes:
+      - ./apps/bucket-api-v2:/bucket-api
+    working_dir: /bucket-api
+    ports:
+      - 3050:3050
+    env_file:
+      - ./env/bucket-api.env
+    command: npm start
